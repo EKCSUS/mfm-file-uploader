@@ -16,10 +16,6 @@ import { NgIf } from '@angular/common';
         <span class="icon" aria-hidden="true">📤</span>
         <span>Uploader</span>
       </a>
-      <a routerLink="/settings" routerLinkActive="active">
-        <span class="icon" aria-hidden="true">⚙️</span>
-        <span>Settings</span>
-      </a>
     </aside>
   `,
   styles: [

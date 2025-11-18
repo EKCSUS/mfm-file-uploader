@@ -68,7 +68,7 @@
               "buildTarget": "mfm-file-uploader:build:development"
             }
           },
-          "defaultConfiguration": "development",
+          "defaultConfiguration": "production",
            "options": {
             "port": 4500
           }
