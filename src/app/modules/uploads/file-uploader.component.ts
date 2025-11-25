@@ -38,19 +38,20 @@ export class FileUploaderComponent implements OnInit {
 
  ngOnInit(): void {
   this._router.queryParams.subscribe((params) => {
-    this.userId = params['userId'];
+    this.userId = params['userId'] || 'rajank@mediaferry.com';
     this.projectId = params['projectId'];
     this.fileName = params['fileName'];
 
     // Check missing params
-    if (!this.userId || !this.projectId || !this.fileName) {
+    if ( !this.projectId || !this.fileName) {
       this._toasterService.clearLoader();
       this.isAuthorized = 'failure';
 
       // Decide specific error message
-      if (!this.userId) {
-        this._toasterService.showError('User Id is missing.', 'Error');
-      } else if (!this.projectId) {
+      // if (!this.userId) {
+      //   this._toasterService.showError('User Id is missing.', 'Error');
+      // } else 
+        if (!this.projectId) {
         this._toasterService.showError('Project Id is missing.', 'Error');
       } else if (!this.fileName) {
         this._toasterService.showError('File Name is missing.', 'Error');
