@@ -39,9 +39,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
   ],
 })
 export class LayoutComponent {
-  constructor(){
-    console.log("LayoutComponent 00")
-  }
+  constructor(){}
   sidebarOpen = true;
 
   toggleSidebar(): void {

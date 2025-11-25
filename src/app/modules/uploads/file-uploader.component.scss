@@ -52,7 +52,31 @@ button[disabled] {
   color: #555;
 }
 
-.uploader__message {
+.uploader__message_success {
+  margin-top: 1rem;
+  color: green;
+}
+
+.uploader__message_failure {
   margin-top: 1rem;
   color: red;
+}
+
+.not-authorized {
+  max-width: 32rem;
+  margin: 2rem auto;
+  border: 1px dashed #bbb;
+  padding: 2rem;
+  border-radius: 0.75rem;
+  text-align: center;
+}
+
+.not-authorized h2 {
+  color: #ff7a22;
+  font-size: 1.5rem;
+}
+
+.not-authorized p {
+  color: #555;
+  font-size: 1rem;
 }
