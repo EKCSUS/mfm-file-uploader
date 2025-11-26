@@ -23,6 +23,7 @@ export class FileUploaderComponent implements OnInit {
   private fileName: string = '';
   private userId: string = '';
   public isUploaded:boolean = false;
+  private userData: any;
 
   selectedFile: Signal<File | null> = computed(() => this.fileSignal());
   uploading: Signal<boolean> = computed(() => this.uploadingSignal());
@@ -72,6 +73,7 @@ export class FileUploaderComponent implements OnInit {
         this._toasterService.clearLoader();
         if (response && response.exists) {
           this.isAuthorized = 'success';
+          this.userData = response.user;
           this._authService.setToken(response.googleAccessToken || "");
         } else {
           this.isAuthorized = 'failure';
@@ -110,7 +112,7 @@ export class FileUploaderComponent implements OnInit {
         projectId: this.projectId,
         fileName: this.fileName,
         fileData: base64String,
-        userId : this.userId
+        userId : this.userData['_id']
       };
       this.uploadingSignal.set(true);
       this.progressSignal.set(0);
