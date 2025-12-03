@@ -125,9 +125,9 @@ export class FileUploaderComponent implements OnInit {
         })
         .subscribe({
           next: (event) => this.handleUploadEvent(event),
-          error: () => {
+          error: (error) => {
             this.isUploaded = false
-            this.messageSignal.set('Upload failed. Please try again.');
+            this.messageSignal.set(error?.error?.message || 'Upload failed. Please try again.');
             this.uploadingSignal.set(false);
             this.progressSignal.set(0);
           },
