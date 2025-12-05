@@ -1,4 +1,4 @@
 export const environment = {
   production: false,
-  apiUrl: 'https://mfrnewapi.mediaferry.com',
+  apiUrl: 'https://mfrbetaapi-new.mediaferry.com', // http:localhost:3010
 };
